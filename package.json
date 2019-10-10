@@ -1,8 +1,8 @@
 {
   "name": "pri-plugin-request",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/main",
   "scripts": {
     "test": "pri test",
     "prepublishOnly": "npm run build",
@@ -12,7 +12,9 @@
     "bundle": "pri bundle",
     "preview": "pri preview",
     "analyse": "pri analyse",
-    "format": "eslint --fix './?(src|docs|tests)/**/*.?(ts|tsx)'"
+    "format": "pri lint",
+    "publish": "pri publish",
+    "lint": "pri lint"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,8 @@
   },
   "homepage": "https://github.com/prijs/pri-plugin-request#readme",
   "dependencies": {
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "^7.0.0",
+    "pri-request": "^1.0.0"
   },
   "devDependencies": {
     "pri": "^3.0.8"
@@ -33,7 +36,9 @@
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm test -- --package root"
     }
-  }
+  },
+  "module": "dist/module",
+  "types": "declaration/index.d.ts"
 }

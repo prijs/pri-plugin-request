@@ -1,3 +1,4 @@
 {
-  "type": "plugin"
+  "type": "plugin",
+  "packageLock": true
 }

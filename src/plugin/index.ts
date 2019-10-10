@@ -28,7 +28,7 @@ pri.project.onCreateEntry(async () => {
     requestFilePath,
     prettier.format(requestContent, {
       semi: false,
-      parser: 'typescript'
-    })
+      parser: 'typescript',
+    }),
   );
 });
